@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+
+<title>Wedding Invitation</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: url('https://cdn.shopify.com/s/files/1/0727/3948/7919/files/96a309fb6588e30410f4bcc379f03374.jpg?v=1774809571') no-repeat center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+/* DARK OVERLAY */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* NAMES */
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+/* DATE */
+.date {
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .names {
+        font-size: 40px;
+    }
+
+    .date {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="names">Sophie & James</div>
+        <div class="date">Saturday · 2026 · December 13</div>
+    </div>
+</section>
+
+</body>
+</html>
