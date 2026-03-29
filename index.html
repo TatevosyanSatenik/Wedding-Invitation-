@@ -40,19 +40,21 @@ body {
     background: rgba(0,0,0,0.25);
 }
 
-/* CONTENT CENTER */
+/* CONTENT */
 .hero-content {
     position: relative;
     z-index: 2;
+    animation: fadeIn 2s ease-in-out;
 }
 
 /* NAMES */
 .names {
     font-family: 'Great Vibes', cursive;
-    font-size: 120px;
+    font-size: 90px;
+    animation: floatText 4s ease-in-out infinite;
 }
 
-/* DATE (BOTTOM) */
+/* DATE */
 .date {
     position: absolute;
     bottom: 40px;
@@ -61,6 +63,29 @@ body {
     font-size: 16px;
     letter-spacing: 5px;
     z-index: 2;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* COUNTDOWN */
+.countdown {
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 3px;
+    z-index: 2;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes floatText {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
 }
 
 /* MOBILE */
@@ -71,7 +96,12 @@ body {
 
     .date {
         font-size: 13px;
-        bottom: 25px;
+        bottom: 20px;
+    }
+
+    .countdown {
+        font-size: 14px;
+        bottom: 60px;
     }
 }
 </style>
@@ -79,13 +109,37 @@ body {
 
 <body>
 
+<!-- 🎵 MUSIC -->
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_9467b3e6f3.mp3" type="audio/mpeg">
+</audio>
+
 <section class="hero">
     <div class="hero-content">
-        <div class="names">Sophia and James</div>
+        <div class="names">Sophie & James</div>
     </div>
 
+    <div class="countdown" id="countdown"></div>
     <div class="date">Saturday · 2026 · December 13</div>
 </section>
+
+<script>
+// COUNTDOWN
+const weddingDate = new Date("December 13, 2026 00:00:00").getTime();
+
+const countdown = document.getElementById("countdown");
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+
+    countdown.innerHTML = `${days} Days · ${hours} Hours · ${minutes} Minutes`;
+}, 1000);
+</script>
 
 </body>
 </html>
