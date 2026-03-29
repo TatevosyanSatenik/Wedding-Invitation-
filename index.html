@@ -10,6 +10,77 @@
 <title>Wedding Invitation</title>
 
 <style>
+    .timing {
+    background: #fff8f0; /* soft romantic background */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.timing-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: #c56b5c;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    background: rgba(255,255,255,0.6); /* light semi-transparent box */
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.schedule-item .icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.schedule-item .event {
+    flex: 1;
+    text-align: left;
+}
+
+.schedule-item .time {
+    font-weight: bold;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .timing-title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    .schedule-item {
+        font-size: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .schedule-item .icon {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .schedule-item .time {
+        text-align: left;
+    }
+}
 .hero {
     position: relative;
     width: 100%;
@@ -357,6 +428,32 @@ window.addEventListener('load', checkSections);
 
     <div class="hero-text">
         <h1>Join Us for Love & Celebration</h1>
+    </div>
+</section>
+    <section class="timing">
+    <h2 class="timing-title">Timing</h2>
+
+    <div class="schedule">
+        <div class="schedule-item">
+            <span class="icon">📍</span>
+            <span class="event">Ceremony</span>
+            <span class="time">16:00 PM</span>
+        </div>
+        <div class="schedule-item">
+            <span class="icon">🍹</span>
+            <span class="event">Cocktail Hour</span>
+            <span class="time">17:30 PM</span>
+        </div>
+        <div class="schedule-item">
+            <span class="icon">🎉</span>
+            <span class="event">Reception & Dinner</span>
+            <span class="time">19:00 PM</span>
+        </div>
+        <div class="schedule-item">
+            <span class="icon">💃</span>
+            <span class="event">Dancing & Celebration</span>
+            <span class="time">21:00 PM</span>
+        </div>
     </div>
 </section>
 </body>
