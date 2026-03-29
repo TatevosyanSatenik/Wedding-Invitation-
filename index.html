@@ -116,7 +116,7 @@ body {
 
 <section class="hero">
     <div class="hero-content">
-        <div class="names">Sophie and James</div>
+        <div class="names">Sophia & Michael</div>
     </div>
 
     <div class="countdown" id="countdown"></div>
@@ -151,6 +151,57 @@ setInterval(() => {
     countdown.innerHTML = `${days} Days · ${hours} Hours · ${minutes} Minutes`;
 }, 1000);
 </script>
+<section class="invitation">
+    <h2 class="inv-title">Happy Ever After</h2>
 
+    <p class="inv-text">
+        We warmly invite you to celebrate this special day with us  
+        and be part of our love story.
+    </p>
+
+    <div class="inv-details">
+        <p>📍 Dream Garden Venue, Paris</p>
+        <p>🕒 16:00 PM</p>
+    </div>
+</section>
+    .invitation {
+    padding: 100px 20px;
+    text-align: center;
+    background: #f9f7f5;
+    color: #333;
+}
+
+/* TITLE */
+.inv-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+/* TEXT */
+.inv-text {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* DETAILS */
+.inv-details p {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin: 5px 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .inv-title {
+        font-size: 40px;
+    }
+
+    .inv-text {
+        font-size: 16px;
+    }
+}
 </body>
 </html>
