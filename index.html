@@ -12,15 +12,17 @@
 
 <style>
 .timing {
-    background:#fff8f0;
+    background:#ffffff; /* մինիմալիստական սպիտակ ֆոն */
     padding:80px 20px;
     text-align:center;
+    font-family:'Helvetica Neue', sans-serif;
 }
 .timing-title {
-    font-family: 'Great Vibes', cursive;
+    font-family:'Great Vibes', cursive;
     font-size:50px;
-    margin-bottom:50px;
-    color:#333;
+    margin-bottom:60px;
+    color:#111; /* մուգ, մինիմալիստական տեքստ */
+    letter-spacing:1px;
 }
 .timeline-horizontal {
     display:flex;
@@ -36,9 +38,9 @@
     position:absolute;
     top:50%;
     left:5%;
-    width:92%;
-    height:4px;
-    background:#333;
+    width:90%;
+    height:2px; /* ավելի նուրբ գիծ */
+    background:#111;
     z-index:0;
     transform:translateY(-50%);
 }
@@ -48,36 +50,43 @@
     text-align:center;
     flex:1 1 200px;
     margin:20px 10px;
+    transition: transform 0.3s ease;
+}
+.timeline-item:hover {
+    transform:translateY(-10px); /* փոքր էֆեկտ հովանավորելու */
 }
 .timeline-item .icon {
-    font-size:36px;
-    color:#c56b5c;
-    margin:0 auto 10px;
+    font-size:40px;
+    margin:0 auto 15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#111; /* սև background էմոջիի շուրջ */
+    color:#fff; /* էմոջին սպիտակ */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 .timeline-item .event {
-    font-weight:bold;
+    font-weight:600;
     font-size:18px;
     margin-bottom:5px;
+    color:#111;
 }
 .timeline-item .time {
-    font-size:20px;
+    font-size:16px;
     font-weight:500;
     color:#555;
 }
 /* MOBILE */
 @media(max-width:768px){
-    .hero {height:70vh;}
-    .names {font-size:50px;}
-    .date {font-size:16px; bottom:20px;}
-    .countdown {font-size:16px; top:20px;}
-    .inv-title {font-size:40px;}
-    .inv-text {font-size:16px;}
     .timeline-horizontal {
         flex-direction:column;
         align-items:center;
     }
     .timeline-horizontal::before {display:none;}
-    .timeline-item {margin:20px 0;}
+    .timeline-item {margin:30px 0;}
 }
   
 .closing {
@@ -476,24 +485,24 @@ window.addEventListener('load', checkSections);
     <h2 class="timing-title">Timing</h2>
     <div class="timeline-horizontal">
         <div class="timeline-item">
-            <div class="icon">📍</div>
+            <div class="icon">🖤</div>
             <div class="event">Ceremony</div>
-            <div class="time">16:00 PM</div>
+            <div class="time">16:00</div>
         </div>
         <div class="timeline-item">
-            <div class="icon">🍹</i></div>
+            <div class="icon">🥂</div>
             <div class="event">Cocktail Hour</div>
-            <div class="time">17:30 PM</div>
+            <div class="time">17:30</div>
         </div>
         <div class="timeline-item">
-            <div class="icon">🎉</div>
+            <div class="icon">🍽️</div>
             <div class="event">Reception & Dinner</div>
-            <div class="time">19:00 PM</div>
+            <div class="time">19:00</div>
         </div>
         <div class="timeline-item">
-            <div class="icon">💃</i></div>
+            <div class="icon">🕺</div>
             <div class="event">Dancing & Celebration</div>
-            <div class="time">21:00 PM</div>
+            <div class="time">21:00</div>
         </div>
     </div>
 </section>
