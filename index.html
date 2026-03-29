@@ -10,6 +10,35 @@
 <title>Wedding Invitation</title>
 
 <style>
+    .animated-section {
+    width: 100%;
+    height: 100vh; /* ամբողջ էկրանի բարձրություն */
+    overflow: hidden;
+    position: relative;
+    opacity: 0; /* սկզբում թաքնված է */
+    transform: scale(1.05); /* փոքր zoom սկզբում */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.animated-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ճիշտ բռնում է բոլոր էկրանները */
+    display: block;
+}
+
+/* visible class when in viewport */
+.animated-section.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .animated-section {
+        height: 70vh; /* բարձրությունը փոքրացնում ենք */
+    }
+}
 * {
     margin: 0;
     padding: 0;
@@ -188,6 +217,22 @@ setInterval(() => {
 
     countdown.innerHTML = `${days} Days · ${hours} Hours · ${minutes} Minutes`;
 }, 1000);
+    const sections = document.querySelectorAll('.animated-section');
+
+function checkSections() {
+    const triggerBottom = window.innerHeight * 0.8;
+
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if(sectionTop < triggerBottom){
+            section.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', checkSections);
+window.addEventListener('load', checkSections);
 </script>
 <section class="invitation">
     <h2 class="inv-title">Happy Ever After</h2>
@@ -202,6 +247,9 @@ setInterval(() => {
         <p>🕒 16:00 PM</p>
     </div>
 </section>
-
+<section class="full-image animated-section">
+    <img src="https://cdn.shopify.com/s/files/1/0727/3948/7919/files/df90aa9423805afa470c84d0e71456bd.jpg?v=1774812483" alt="Wedding Image">
+</section>
+    
 </body>
 </html>
