@@ -69,7 +69,7 @@ body {
 /* COUNTDOWN */
 .countdown {
     position: absolute;
-    bottom: 80px;
+    bottom: 180px;
     width: 100%;
     text-align: center;
     font-size: 18px;
@@ -110,7 +110,7 @@ body {
 <body>
 
 <!-- 🎵 MUSIC -->
-<audio autoplay loop>
+<audio id="bgMusic" loop>
     <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_9467b3e6f3.mp3" type="audio/mpeg">
 </audio>
 
@@ -124,6 +124,17 @@ body {
 </section>
 
 <script>
+const music = document.getElementById("bgMusic");
+
+function startMusic() {
+    music.play().catch(() => {});
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("scroll", startMusic);
+}
+
+document.addEventListener("click", startMusic);
+document.addEventListener("scroll", startMusic);
+    music.volume = 0.3;
 // COUNTDOWN
 const weddingDate = new Date("December 13, 2026 00:00:00").getTime();
 
