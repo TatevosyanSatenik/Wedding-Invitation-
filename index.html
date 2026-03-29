@@ -10,13 +10,29 @@
 <title>Wedding Invitation</title>
 
 <style>
-   .timeline {
+   .timing {
+    background: #fff8f0;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.timing-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: #c56b5c;
+}
+
+/* TIMELINE CONTAINER */
+.timeline {
     position: relative;
     max-width: 600px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
+/* TIMELINE LINE */
 .timeline::before {
     content: '';
     position: absolute;
@@ -27,6 +43,7 @@
     transform: translateX(-50%);
 }
 
+/* TIMELINE ITEM */
 .timeline-item {
     position: relative;
     width: 50%;
@@ -34,9 +51,17 @@
     box-sizing: border-box;
 }
 
-.timeline-item.left { left: 0; text-align: right; }
-.timeline-item.right { left: 50%; text-align: left; }
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
 
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* ICON DOT */
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -46,6 +71,37 @@
     background: #c56b5c;
     border-radius: 50%;
     z-index: 1;
+}
+
+/* ITEM CONTENT */
+.timeline-item .icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.timeline-item .event {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.timeline-item .time {
+    font-size: 14px;
+    color: #555;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .timeline::before { left: 20px; }
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        text-align: left !important;
+        margin-bottom: 30px;
+    }
+    .timeline-item::before {
+        left: 0;
+        top: 10px;
+    }
 }
 .hero {
     position: relative;
@@ -398,7 +454,6 @@ window.addEventListener('load', checkSections);
 </section>
     <section class="timing">
     <h2 class="timing-title">Timing</h2>
-
     <div class="schedule">
         <div class="schedule-item">
             <span class="icon">📍</span>
