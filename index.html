@@ -181,6 +181,7 @@ body {
     <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_9467b3e6f3.mp3" type="audio/mpeg">
 </audio>
 
+<!-- HERO -->
 <section class="hero">
     <div class="hero-content">
         <div class="names">Sophia & Michael</div>
@@ -190,21 +191,41 @@ body {
     <div class="date">Saturday · 2026 · December 13</div>
 </section>
 
+<!-- INVITATION -->
+<section class="invitation">
+    <h2 class="inv-title">Happy Ever After</h2>
+
+    <p class="inv-text">
+        We warmly invite you to celebrate this special day with us  
+        and be part of our love story.
+    </p>
+
+    <div class="inv-details">
+        <p>📍 Dream Garden Venue, Paris</p>
+        <p>🕒 16:00 PM</p>
+    </div>
+</section>
+
+<!-- FULL IMAGE / SCROLL ANIMATION -->
+<section class="full-image animated-section">
+    <img src="https://cdn.shopify.com/s/files/1/0727/3948/7919/files/df90aa9423805afa470c84d0e71456bd.jpg?v=1774812483" alt="Wedding Image">
+</section>
+
 <script>
 const music = document.getElementById("bgMusic");
 
+// Start music on first click or scroll
 function startMusic() {
     music.play().catch(() => {});
     document.removeEventListener("click", startMusic);
     document.removeEventListener("scroll", startMusic);
 }
-
 document.addEventListener("click", startMusic);
 document.addEventListener("scroll", startMusic);
-    music.volume = 0.3;
+music.volume = 0.3;
+
 // COUNTDOWN
 const weddingDate = new Date("December 13, 2026 00:00:00").getTime();
-
 const countdown = document.getElementById("countdown");
 
 setInterval(() => {
@@ -217,7 +238,9 @@ setInterval(() => {
 
     countdown.innerHTML = `${days} Days · ${hours} Hours · ${minutes} Minutes`;
 }, 1000);
-    const sections = document.querySelectorAll('.animated-section');
+
+// SCROLL ANIMATION FOR FULL IMAGE
+const sections = document.querySelectorAll('.animated-section');
 
 function checkSections() {
     const triggerBottom = window.innerHeight * 0.8;
@@ -234,23 +257,6 @@ function checkSections() {
 window.addEventListener('scroll', checkSections);
 window.addEventListener('load', checkSections);
 </script>
-<section class="invitation">
-    <h2 class="inv-title">Happy Ever After</h2>
 
-    <p class="inv-text">
-        We warmly invite you to celebrate this special day with us  
-        and be part of our love story.
-    </p>
-
-    <div class="inv-details">
-        <p>📍 Dream Garden Venue, Paris</p>
-        <p>🕒 16:00 PM</p>
-    </div>
-    <section class="full-image animated-section">
-    <img src="https://cdn.shopify.com/s/files/1/0727/3948/7919/files/df90aa9423805afa470c84d0e71456bd.jpg?v=1774812483" alt="Wedding Image">
-    </section>
-</section>
-
-    
 </body>
 </html>
