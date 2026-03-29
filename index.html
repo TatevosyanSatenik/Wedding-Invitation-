@@ -94,7 +94,7 @@
 }
 
 .closing-text {
-    position: absolute;
+ position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -106,20 +106,15 @@
 }
 
 .closing-text .names-italic {
-    display: block;
-    margin-top: 15px;
+    position: absolute;
+    bottom: 20px;       /* 20px վերևից նկարի ստորին մասից */
+    left: 50%;          /* հորիզոնտալ կենտրոն */
+    transform: translateX(-50%); /* կենտրոնացում */
     font-size: 28px;
     font-style: italic;
     color: #ffd1c1;
-    
-    /* նոր մասը՝ ներքևում տեղավորելու համար */
-    position: absolute;
-    bottom: 20px; /* 20px հեռավորություն նկարի ստորին մասից */
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0; /* հանենք, որովհետև position:absolute է */
+    margin: 0;           /* հանենք ցանկացած margin-top */
 }
-
 /* MOBILE */
 @media(max-width:768px){
     .closing-text {
