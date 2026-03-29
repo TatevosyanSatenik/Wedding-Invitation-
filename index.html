@@ -32,16 +32,22 @@
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
     animation: fadeFloat 4s ease-in-out infinite;
+
+    /* NEW: background for text */
+    background: rgba(0, 0, 0, 0.4); /* semi-transparent black */
+    padding: 20px 40px;
+    border-radius: 15px;
+    max-width: 90%;
 }
 
+/* H1 font */
 .hero-text h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 60px;
     line-height: 1.2;
 }
-
 /* ANIMATION: FLOAT + FADE */
 @keyframes fadeFloat {
     0%, 100% { transform: translate(-50%, -50%) translateY(0); opacity: 0.9; }
