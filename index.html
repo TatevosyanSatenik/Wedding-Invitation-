@@ -80,41 +80,45 @@
     .timeline-item {margin:20px 0;}
 }
   
-   .closing {
+.closing {
     position: relative;
     text-align: center;
     color: white;
-    
+    margin-top: 50px;
 }
 
 .closing img {
     width: 100%;
-    height: 90vh;
+    height: 60vh;
     object-fit: cover;
 }
 
+/* Centered main text */
 .closing-text {
- position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Great Vibes', cursive;
-    font-size: 50px;
+    font-size: 40px;
+    background: rgba(0,0,0,0.35);
     padding: 15px 25px;
     border-radius: 10px;
     line-height: 1.4;
 }
 
+/* Names at the bottom */
 .closing-text .names-italic {
-    position: absolute;
-    bottom: 20px;       /* 20px վերևից նկարի ստորին մասից */
-    left: 50%;          /* հորիզոնտալ կենտրոն */
-    transform: translateX(-50%); /* կենտրոնացում */
+    position: absolute;     /* այսինքն անհատապես absolute նկարի վրա */
+    bottom: 20px;           /* նկարի ստորին մասից հեռավորություն */
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 28px;
     font-style: italic;
     color: #ffd1c1;
-    margin: 0;           /* հանենք ցանկացած margin-top */
+    margin: 0;
 }
+
 /* MOBILE */
 @media(max-width:768px){
     .closing-text {
@@ -125,7 +129,6 @@
         font-size:20px;
     }
 }
-
     
 .hero {
     position: relative;
