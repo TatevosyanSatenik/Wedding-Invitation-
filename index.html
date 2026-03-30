@@ -12,101 +12,101 @@
 
 <style>
 .timing {
-    background:#fafafa;
+    background:#ffffff; /* մինիմալիստական սպիտակ ֆոն */
     padding:80px 20px;
-    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    text-align:center;
+    font-family:'Helvetica Neue', sans-serif;
 }
 .timing-title {
-    font-size:42px;
-    text-align:center;
-    margin-bottom:50px;
-    font-weight:300;
-    letter-spacing:-1px;
-    color:#1a1a1a;
+    font-family:'Great Vibes', cursive;
+    font-size:50px;
+    margin-bottom:60px;
+    color:#111; /* մուգ, մինիմալիստական տեքստ */
+    letter-spacing:1px;
 }
-.timeline-grid {
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:20px;
+.timeline-horizontal {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
     max-width:1000px;
     margin:0 auto;
+    flex-wrap:wrap;
+    position:relative;
 }
-.timing-card {
-    background:#fff;
-    padding:30px 20px;
+.timeline-horizontal::before {
+    content:'';
+    position:absolute;
+    top:50%;
+    left:5%;
+    width:90%;
+    height:2px; /* ավելի նուրբ գիծ */
+    background:#111;
+    z-index:0;
+    transform:translateY(-50%);
+}
+.timeline-item {
+    position:relative;
+    z-index:1;
     text-align:center;
-    border-radius:20px;
-    transition:all 0.3s ease;
-    border:1px solid #eee;
+    flex:1 1 200px;
+    margin:20px 10px;
+    transition: transform 0.3s ease;
 }
-.timing-card:hover {
-    transform:translateY(-5px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.05);
-    border-color:#ddd;
+.timeline-item:hover {
+    transform:translateY(-10px); /* փոքր էֆեկտ հովանավորելու */
 }
-.timing-card .icon {
-    font-size:48px;
-    margin-bottom:20px;
-    display:inline-block;
+.timeline-item .icon {
+    font-size:40px;
+    margin:0 auto 15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#111; /* սև background էմոջիի շուրջ */
+    color:#fff; /* էմոջին սպիտակ */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-.timing-card .event {
+.timeline-item .event {
     font-weight:600;
     font-size:18px;
-    color:#1a1a1a;
-    margin-bottom:8px;
+    margin-bottom:5px;
+    color:#111;
 }
-.timing-card .time {
-    font-size:24px;
-    font-weight:300;
-    color:#333;
-    letter-spacing:-0.5px;
+.timeline-item .time {
+    font-size:16px;
+    font-weight:500;
+    color:#555;
 }
 
+/* MOBILE - Հորիզոնական մեկ գծով, կենտրոնացված, իրար մոտ */
 @media(max-width:768px){
-    .timeline-grid {
-        grid-template-columns:repeat(2, 1fr);
-        gap:15px;
+    .timeline-horizontal {
+        flex-direction:row; /* հորիզոնական ուղղություն */
+        justify-content:center; /* կենտրոնացում */
+        gap:15px; /* փոքր հեռավորություն տարրերի միջև */
+        flex-wrap:wrap; /* թույլատրում է անցումը նոր տող, եթե շատ նեղ է */
     }
-    .timing-card {
-        padding:20px 15px;
+    .timeline-horizontal::before {
+        display:none; /* թաքցնում ենք գիծը մոբայլում */
     }
-    .timing-card .icon {
-        font-size:36px;
-        margin-bottom:12px;
+    .timeline-item {
+        flex:0 1 auto; /* տարրերը չեն ձգվում, մնում են իրենց չափերով */
+        margin:10px 0; /* ուղղահայաց փոքր հեռավորություն */
+        min-width:80px; /* նվազագույն լայնություն */
     }
-    .timing-card .event {
-        font-size:15px;
+    .timeline-item .icon {
+        width:55px; /* փոքրացնում ենք իկոնկան */
+        height:55px;
+        font-size:30px;
+        margin-bottom:8px;
     }
-    .timing-card .time {
-        font-size:18px;
+    .timeline-item .event {
+        font-size:14px; /* տեքստը փոքրացնում ենք */
     }
-}
-
-@media(max-width:480px){
-    .timeline-grid {
-        grid-template-columns:1fr;
-        gap:12px;
-    }
-    .timing-card {
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        text-align:left;
-        padding:15px 20px;
-        gap:15px;
-    }
-    .timing-card .icon {
-        margin-bottom:0;
-        font-size:32px;
-    }
-    .timing-card .info {
-        flex:1;
-    }
-    .timing-card .event {
-        margin-bottom:4px;
-    }
-    .timing-card .time {
-        font-size:16px;
+    .timeline-item .time {
+        font-size:12px;
     }
 }
 
