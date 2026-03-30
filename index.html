@@ -80,18 +80,33 @@
     color:#555;
 }
 
-    
-/* MOBILE */
-/* MOBILE */
+/* MOBILE - Հորիզոնական մեկ գծով, կենտրոնացված, իրար մոտ */
 @media(max-width:768px){
     .timeline-horizontal {
-        flex-direction:column;
-        gap:10px; /* այսինքն, items իրարից այսքան հեռավորություն ունեն */
+        flex-direction:row; /* հորիզոնական ուղղություն */
+        justify-content:center; /* կենտրոնացում */
+        gap:15px; /* փոքր հեռավորություն տարրերի միջև */
+        flex-wrap:wrap; /* թույլատրում է անցումը նոր տող, եթե շատ նեղ է */
     }
-    .timeline-horizontal::before {display:none;}
-
+    .timeline-horizontal::before {
+        display:none; /* թաքցնում ենք գիծը մոբայլում */
+    }
     .timeline-item {
-        margin:5px 0; /* վերև-ներքև spacing յուրաքանչյուր item-ի շուրջ */
+        flex:0 1 auto; /* տարրերը չեն ձգվում, մնում են իրենց չափերով */
+        margin:10px 0; /* ուղղահայաց փոքր հեռավորություն */
+        min-width:80px; /* նվազագույն լայնություն */
+    }
+    .timeline-item .icon {
+        width:55px; /* փոքրացնում ենք իկոնկան */
+        height:55px;
+        font-size:30px;
+        margin-bottom:8px;
+    }
+    .timeline-item .event {
+        font-size:14px; /* տեքստը փոքրացնում ենք */
+    }
+    .timeline-item .time {
+        font-size:12px;
     }
 }
     
