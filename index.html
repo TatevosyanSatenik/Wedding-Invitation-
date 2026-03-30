@@ -85,25 +85,16 @@
 @media(max-width:768px){
     .timeline-horizontal {
         flex-direction:column;
-        gap:5px; /* items իրարից շատ մոտ */
+        gap:15px; /* այսինքն, items իրարից այսքան հեռավորություն ունեն */
     }
     .timeline-horizontal::before {display:none;}
 
     .timeline-item {
-        margin:2px 0; /* վերև-ներքև spacing գրեթե զրո */
+        margin:10px 0; /* վերև-ներքև spacing յուրաքանչյուր item-ի շուրջ */
     }
-
-    .timeline-item .icon {
-        width:35px;
-        height:35px;
-        font-size:22px;
-        margin-bottom:4px; /* icon-ի ու event-ի միջև փոքրիկ տարածություն */
-    }
-
-    .timeline-item .event {font-size:14px; margin-bottom:2px;}
-    .timeline-item .time {font-size:12px;}
 }
 
+    
     
 .closing {
     position: relative;
